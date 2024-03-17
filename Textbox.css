@@ -1,0 +1,29 @@
+*{
+
+	padding: 10px;
+	margin: 0px;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+.heading1{
+
+	color: royalblue;
+	font-weight: bolder;
+	font-size: 35px;
+	font-family: Arial Black;
+}
+.container label{
+
+	color: orange;
+	font-weight: bolder;
+}
+.textboxform button{
+
+	color: white;
+	background: orangered;
+	border-radius: ;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	cursor : pointer;
+}

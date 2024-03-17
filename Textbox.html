@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TEXT BOX</title>
+	<link rel="stylesheet" type="text/css" href="Textbox.css">
+</head>
+<body>
+   <h1 class="heading1" align="center">TEXT BOX</h1>
+   <div class="container" align="center">
+   <form class="textboxform">
+   	<label>Enter your text below</label>
+   	<br>
+   	<br>
+   	<textarea id="text" rows="10" cols="70" autofocus onkeyup="updateInfo()"></textarea><br><br>
+   	<button type="button" onclick="transformUppercase()">UPPERCASE</button>
+   	<button type="button" onclick="transformLowerCase()">LOWERCASE</button>
+   	<button type="button" onclick="changeColor()">CHANGECOLOR</button>
+   	<button type="button" onclick="underlineText()">UNDERLINETEXT</button>
+      <button type="button" onclick="copyText()">COPY</button>
+      <button type="button" onclick="clearTextbox()">CLEAR</button>
+   	<br><br>
+   	<h2 id="textinfo">This text contains 0 words and 0 characters</h2>
+   </form>
+   </div>
+   <script type="text/javascript">
+   	
+      let text = document.getElementById("text");
+      let textinfo = document.getElementById("textinfo");
+      let clr ;
+   	function transformUppercase() {
+   		
+   		text.value = text.value.toUpperCase();
+   	}
+   	function transformLowerCase(){
+
+   		text.value = text.value.toLowerCase();
+   	}
+   	function changeColor(){
+        
+           clr = prompt("Enter your fav color").toLowerCase();
+           text.style.color = clr;       
+   	}
+   	function underlineText(){
+
+   		text.style.textDecoration = `underline 2px solid ${clr}`;
+   	}
+   	function updateInfo() {
+   		
+   		let numberOfWords = text.value.trim().split(" ").length;
+         
+        console.log(numberOfWords);
+
+   		textinfo.innerHTML = `This text contains ${numberOfWords} words and ${text.value.length} characters`;
+  	  }
+     function copyText(){
+
+         navigator.clipboard.writeText(text.value);
+     }
+     function clearTextbox(){
+
+        text.value = null;
+        updateInfo();
+     }
+   </script>
+</body>
+</html>
